@@ -9,11 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // OrderItem 생성은 CreateOrderItem Static method 로만 생성 하도록 생성자 method를 protected로 접근 제어를 해둠
 public class OrderItem {
 
 	@Id @GeneratedValue

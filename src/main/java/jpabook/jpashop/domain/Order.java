@@ -18,12 +18,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "orders")
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // Order 생성은 CreateOrder Static method 로만 생성 하도록 생성자 method를 protected로 접근 제어를 해둠
 public class Order {
 	
 	@Id @GeneratedValue
